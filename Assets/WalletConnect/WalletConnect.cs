@@ -87,7 +87,7 @@ namespace WalletConnectSharp
             clientId = Guid.NewGuid().ToString();
 
             if (transport == null)
-                transport = new WebsocketTransport(eventDelegator);
+                transport = new NativeWebSocketTransport(eventDelegator);
 
             this._bridgeUrl = bridgeUrl;
             this.Transport = transport;

@@ -10,14 +10,14 @@ using NativeWebSocket;
 
 namespace WalletConnectSharp.Network
 {
-    public class WebsocketTransport : ITransport
+    public class NativeWebSocketTransport : ITransport
     {
         private bool opened = false;
 
         private WebSocket client;
         private EventDelegator _eventDelegator;
 
-        public WebsocketTransport(EventDelegator eventDelegator)
+        public NativeWebSocketTransport(EventDelegator eventDelegator)
         {
             this._eventDelegator = eventDelegator;
         }
