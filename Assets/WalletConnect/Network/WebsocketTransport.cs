@@ -106,6 +106,7 @@ namespace WalletConnectSharp.Network
             {
                 var msg = JsonConvert.DeserializeObject<NetworkMessage>(json);
 
+                /*
                 client.SendText(new NetworkMessage()
                 {
                     Payload = "",
@@ -113,7 +114,8 @@ namespace WalletConnectSharp.Network
                     Silent = true,
                     Topic = msg.Topic
                 }.ToString());
-
+                */
+            
                 if (this.MessageReceived != null)
                     MessageReceived(this, new MessageReceivedEventArgs(msg, this));
             }
