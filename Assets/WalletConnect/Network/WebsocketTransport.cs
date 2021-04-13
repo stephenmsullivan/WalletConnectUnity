@@ -63,8 +63,6 @@ namespace WalletConnectSharp.Network
                 OnMessageReceived(e);
             };
 
-            //client.DisconnectionHappened.Subscribe(delegate(DisconnectionInfo info) { client.Reconnect(); });
-
             client.OnClose += (e) => {
 
                 Debug.Log("OnClose " + e);
@@ -76,11 +74,6 @@ namespace WalletConnectSharp.Network
                 Debug.Log("OnError " + e);
 
             };
-
-            //client.ReconnectionHappened.Subscribe(delegate(ReconnectionInfo info)
-            //{
-            //   Console.WriteLine(info.Type);
-            //});
 
             await client.Connect();
         }

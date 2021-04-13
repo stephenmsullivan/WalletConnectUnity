@@ -62,10 +62,10 @@ public class WalletConnectView : MonoBehaviour
 
     }
 
-    private void OnConnect(object walletConnect, WCSessionData result)
+    private void OnConnect(object walletConnect, WalletConnect result)
     {
-        Debug.Log("Account: " + result.accounts[0]);
-        Debug.Log("chainId: " + result.chainId);
+        Debug.Log("Account: " + result.Accounts[0]);
+        Debug.Log("chainId: " + result.ChainId);
     }
 
     void Update()
