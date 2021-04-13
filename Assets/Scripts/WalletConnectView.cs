@@ -49,6 +49,7 @@ public class WalletConnectView : MonoBehaviour
 
         try
         {
+            walletConnect.OnConnect += OnConnect;
             await walletConnect.Connect();
 
             Debug.Log("Disconnected");
@@ -59,6 +60,12 @@ public class WalletConnectView : MonoBehaviour
             Debug.Log(e.StackTrace);
         }
 
+    }
+
+    private void OnConnect(object walletConnect, WCSessionData result)
+    {
+        Debug.Log("Account: " + result.accounts[0]);
+        Debug.Log("chainId: " + result.chainId);
     }
 
     void Update()

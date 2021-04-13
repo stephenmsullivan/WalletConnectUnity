@@ -36,7 +36,7 @@ namespace WalletConnectSharp
         private readonly string _handshakeTopic;
         public readonly EventDelegator Events;
 
-        public event EventHandler<WalletConnect> OnConnect;
+        public event EventHandler<WCSessionData> OnConnect;
         public event EventHandler<WalletConnect> OnDisconnect;
 
         private long _handshakeId;
@@ -145,11 +145,8 @@ namespace WalletConnectSharp
 
             var result = await CreateSession();
 
-            Debug.Log("Account: " + result.accounts[0]);
-            Debug.Log("chainId: " + result.chainId);
-
             if (OnConnect != null)
-                OnConnect(this, this);
+                OnConnect(this, result);
             return result;
         }
 
